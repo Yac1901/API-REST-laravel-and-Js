@@ -10,16 +10,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('students', [StudentController::class, 'index']);
+Route::controller(StudentController::class)->prefix("students")->group(function () {
 
-Route::post('students', [StudentController::class, 'store']);
-
-Route::get('students/{id}', [StudentController::class, 'show']);
-
-Route::get('students/{id}/edit', [StudentController::class, 'edit']);
-
-Route::put('students/{id}/edit', [StudentController::class, 'update']);
-
-Route::delete('students/{id}/delete', [StudentController::class, 'destroy']);
-
-
+    Route::get("all", "index")->name("students.all");
+    Route::post("", "store")->name("students.create");
+    Route::get("{id}", "show")->name("students.show");
+    Route::put("{id}/edit", "update")->name("students.update");
+    Route::delete("{id}/delete", "destroy")->name("students.destroy");
+});

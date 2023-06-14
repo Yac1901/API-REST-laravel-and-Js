@@ -90,13 +90,6 @@ class StudentController extends Controller
         }
     }
 
-    public function edit($id)
-    {
-        $show = $this->show($id);
-
-        return $show;
-    }
-
     public function update(Request $request, int $id)
     {
         $validator = Validator::make($request->all(), [
