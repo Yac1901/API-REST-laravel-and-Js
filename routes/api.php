@@ -13,8 +13,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::controller(StudentController::class)->prefix("students")->group(function () {
 
     Route::get("all", "index")->name("students.all");
-    Route::post("", "store")->name("students.create");
+    Route::post("", "create")->name("students.create");
     Route::get("{id}", "show")->name("students.show");
-    Route::put("{id}/edit", "update")->name("students.update");
+    Route::put("edit/{id}", "update")->name("students.update");
     Route::delete("{id}/delete", "destroy")->name("students.destroy");
 });

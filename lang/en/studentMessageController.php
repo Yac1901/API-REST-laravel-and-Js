@@ -2,12 +2,15 @@
 
 return [
     'errors' => [
-        'no_records'         => 'No Records Found',
-        'unexpected'         => 'Something Went Wrong!',
-        'student_not_found'  => 'No Such Student Found',
+        'no_records'         => 'No se encontraron registros',
+        'unexpected'         => 'Algo salio mal!',
+        'student_not_found'  => 'Ningun estudiante fue encontrado',
     ],
     'succesful' => [
-        'created' => 'Student Created Successfully',
-        'updated' => 'Student Updated Successfully',
+        'created' => 'Estudiante creado correctamente',
+        'updated' => 'Estudiante actualizado correctamente',
+        'removed' => 'Estudiante eliminado correctamente',
+
+
     ]
 ];
